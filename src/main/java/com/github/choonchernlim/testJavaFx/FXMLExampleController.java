@@ -1,4 +1,4 @@
-package project.testJavaFx;
+package com.github.choonchernlim.testJavaFx;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

@@ -28,9 +28,10 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>8.1.3</version>
                 <configuration>
-                    <mainClass>project.testJavaFx.FXMLExample</mainClass>
-                    <vendor>My project</vendor>
+                    <mainClass>com.github.choonchernlim.testJavaFx.FXMLExample</mainClass>
+                    <vendor>Choon-Chern Lim</vendor>
                     <verbose>true</verbose>
+                    <appName>${project.artifactId}</appName>
                 </configuration>
             </plugin>
         </plugins>
