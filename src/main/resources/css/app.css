@@ -1,5 +1,5 @@
 .root {
-    -fx-background-image: url("background.jpg");
+    -fx-background-image: url("../img/background.jpg");
 }
 
 .label {
@@ -32,4 +32,8 @@
 
 .button:hover {
     -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+}
+
+.pane {
+    -fx-background-color: #8fbc8f;
 }

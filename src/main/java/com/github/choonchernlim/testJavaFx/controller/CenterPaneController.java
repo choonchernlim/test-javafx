@@ -1,12 +1,13 @@
-package com.github.choonchernlim.testJavaFx;
+package com.github.choonchernlim.testJavaFx.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.text.Text;
 
-public class FXMLExampleController {
-    public PasswordField passwordField;
+public final class CenterPaneController {
+    @FXML
+    private PasswordField passwordField;
 
     @FXML
     private Text actiontarget;
