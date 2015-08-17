@@ -23,7 +23,7 @@ public final class MainController {
     }
 
     @Subscribe
-    public void toggleRightContainerVisibility(ShowHideEvent event) {
+    public void toggleRightContainerVisibility(final ShowHideEvent event) {
         System.out.println("hiding right side from main controller....");
 
         if (event.isShow()) {
