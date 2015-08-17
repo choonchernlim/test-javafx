@@ -3,12 +3,17 @@ package com.github.choonchernlim.testJavaFx.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuBar;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public final class MenuController {
-    public MenuBar menuBar;
+    private static final Logger LOGGER = LoggerFactory.getLogger(MenuController.class);
+
+    @FXML
+    private MenuBar menuBar;
 
     @FXML
     private void handleAboutAction(ActionEvent actionEvent) {
-        System.out.println("about action!");
+        LOGGER.debug("about action!");
     }
 }

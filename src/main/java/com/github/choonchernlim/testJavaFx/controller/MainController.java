@@ -6,10 +6,13 @@ import com.github.choonchernlim.testJavaFx.service.FxmlLoaderService;
 import com.google.common.eventbus.Subscribe;
 import javafx.fxml.FXML;
 import javafx.scene.layout.BorderPane;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 
 public final class MainController {
+    private static final Logger LOGGER = LoggerFactory.getLogger(MainController.class);
     private final FxmlLoaderService fxmlLoaderService;
 
     @FXML
@@ -22,7 +25,7 @@ public final class MainController {
 
     @Subscribe
     public void toggleRightContainerVisibility(final ShowHideEvent event) {
-        System.out.println("hiding right side from main controller....");
+        LOGGER.debug("hiding right side from main controller....");
 
         if (event.isShow()) {
             borderPane.setRight(fxmlLoaderService.load(FxmlEnum.RIGHT_PANE));

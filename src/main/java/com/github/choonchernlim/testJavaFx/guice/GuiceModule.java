@@ -9,7 +9,6 @@ public final class GuiceModule extends AbstractModule {
     @Override
     protected void configure() {
         bind(EventBus.class).asEagerSingleton();
-        //bind(EventBusService.class).to(EventBusServiceImpl.class).asEagerSingleton();
         bind(FxmlLoaderService.class).to(FxmlLoaderServiceImpl.class).asEagerSingleton();
     }
 }
