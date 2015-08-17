@@ -2,7 +2,6 @@ package com.github.choonchernlim.testJavaFx.controller;
 
 import com.github.choonchernlim.testJavaFx.constant.FxmlEnum;
 import com.github.choonchernlim.testJavaFx.event.ShowHideEvent;
-import com.github.choonchernlim.testJavaFx.service.EventBusService;
 import com.github.choonchernlim.testJavaFx.service.FxmlLoaderService;
 import com.google.common.eventbus.Subscribe;
 import javafx.fxml.FXML;
@@ -17,9 +16,8 @@ public final class MainController {
     private BorderPane borderPane;
 
     @Inject
-    public MainController(final FxmlLoaderService fxmlLoaderService, final EventBusService eventBusService) {
+    public MainController(final FxmlLoaderService fxmlLoaderService) {
         this.fxmlLoaderService = fxmlLoaderService;
-        eventBusService.register(this);
     }
 
     @Subscribe

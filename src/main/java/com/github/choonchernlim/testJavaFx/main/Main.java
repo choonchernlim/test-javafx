@@ -11,7 +11,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public final class Main extends Application {
-    public static final Injector INJECTOR = Guice.createInjector(new GuiceModule());
 
     public static void main(String[] args) {
         launch(args);
@@ -19,8 +18,8 @@ public final class Main extends Application {
 
     @Override
     public void start(final Stage primaryStage) throws Exception {
-
-        final FxmlLoaderService fxmlLoaderService = INJECTOR.getInstance(FxmlLoaderService.class);
+        final Injector injector = Guice.createInjector(new GuiceModule());
+        final FxmlLoaderService fxmlLoaderService = injector.getInstance(FxmlLoaderService.class);
 
         final Parent root = fxmlLoaderService.load(FxmlEnum.MAIN);
 

@@ -1,29 +1,29 @@
 package com.github.choonchernlim.testJavaFx.controller;
 
 import com.github.choonchernlim.testJavaFx.event.ShowHideEvent;
-import com.github.choonchernlim.testJavaFx.service.EventBusService;
+import com.google.common.eventbus.EventBus;
 import javafx.fxml.FXML;
 
 import javax.inject.Inject;
 
 public final class LeftPaneController {
-    private final EventBusService eventBusService;
+    private final EventBus eventBus;
 
     @Inject
-    public LeftPaneController(final EventBusService eventBusService) {
+    public LeftPaneController(final EventBus eventBus) {
         System.out.println("left pane controller constructor");
-        this.eventBusService = eventBusService;
+        this.eventBus = eventBus;
     }
 
     @FXML
     protected void hideRightSide() {
         System.out.println("hiding right side....");
-        eventBusService.post(new ShowHideEvent(false));
+        eventBus.post(new ShowHideEvent(false));
     }
 
     @FXML
     protected void showRightSide() {
         System.out.println("showing right side....");
-        eventBusService.post(new ShowHideEvent(true));
+        eventBus.post(new ShowHideEvent(true));
     }
 }
